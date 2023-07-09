@@ -1,2 +1,2 @@
 # DentiSmile
-Aplicación de escritorio realizada para la gestión de una clínica dental.
+Aplicación de escritorio realizada para la gestión de una clínica dental, haciendo uso del patrón de diseño MVC, trabajado en JavaSE conectado a una base de datos SQL, utilizando JavaFX para poder generar las vistas y trabajar los objetos que en ellas se encuentran, en donde las vistas y logos fueron personalmente hechos a mano, aplicación la cual también puede generar informes para toma de decisiones adminsitrativas dentro de la clínica que la utilice.
