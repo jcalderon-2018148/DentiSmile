@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteDetalleReceta2" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b785bdf4-4476-470a-8c6e-6c63a38cce42">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F8FCFF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F8FCFF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="detalleReceta" uuid="4593e874-3da6-4eb0-8e8e-95242a344803">
+		<parameter name="codRecetaTBL" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select * from Recetas R inner join DetalleReceta DR on R.codigoReceta =
+DR.codigoReceta inner join Medicamentos M on
+DR.codigoMedicamento = M.codigoMedicamento where R.codigoReceta = $P{codRecetaTBL}]]>
+		</queryString>
+		<field name="codigoReceta" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fechaReceta" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="numeroColegiado" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="codigoDetalleReceta" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="dosis" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="codigoMedicamento" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nombreMedicamento" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<group name="nombreMedicamento">
+			<groupExpression><![CDATA[$F{nombreMedicamento}]]></groupExpression>
+		</group>
+		<group name="dosis">
+			<groupExpression><![CDATA[$F{dosis}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="codReceta" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from Recetas R inner join DetalleReceta DR on R.codigoReceta =
+DR.codigoReceta inner join Medicamentos M on DR.codigoMedicamento =
+M.codigoMedicamento where R.codigoReceta = $P{codReceta};]]>
+	</queryString>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaReceta" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoDetalleReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoMedicamento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreMedicamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 2" style="table 2" x="0" y="0" width="730" height="57" uuid="54252360-84b4-4a5f-b7ed-4b8ce5b282c1"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="detalleReceta" uuid="3d2eecb2-529b-499e-89fd-84fa2662aaf1">
+						<datasetParameter name="codRecetaTBL">
+							<datasetParameterExpression><![CDATA[$P{codReceta}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="215" uuid="df0d4520-adcf-4a2c-9220-9df2b28529ae">
+						<jr:columnHeader style="table 2_CH" height="49" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="215" height="49" uuid="18511ff1-bac4-4fe2-8c56-0fe4c13e242d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Calisto MT" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Medicamento]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="34" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="215" height="34" uuid="cad37a45-8860-421e-8457-a79b99384d3f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Calisto MT" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{nombreMedicamento}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="491" uuid="b3a704ee-8e07-4b17-baad-273c493ec4e5">
+						<jr:columnHeader style="table 2_CH" height="49" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="491" height="49" uuid="139dc408-39c8-4a8f-bdec-03efa3713b63"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Calisto MT" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Dosis]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="34" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="491" height="34" uuid="93778657-d520-4060-9194-e9c4c67f30a4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Calisto MT" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{dosis}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

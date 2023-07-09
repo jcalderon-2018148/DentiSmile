@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportePacientes" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b2d34e7e-bd09-4b94-9462-999c00cf746c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="512"/>
+	<parameter name="codImagen" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select E.descripcion, D.numeroColegiado, D.nombresDoctor, D.apellidosDoctor, D.telefonoContacto from Especialidades E INNER JOIN Doctores D ON D.codigoEspecialidad = E.codigoEspecialidad;]]>
+	</queryString>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="0" width="571" height="752" uuid="73ce9a51-0dfa-43e6-b077-3a1a8104ba86"/>
+				<imageExpression><![CDATA[$P{codImagen}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="290" y="718" width="24" height="20" forecolor="#FFFFFF" uuid="9172e329-7c40-4f16-9348-56511d9af3a7"/>
+				<textElement>
+					<font fontName="Calisto MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="127" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="94" height="20" uuid="66f3965b-9cc0-4448-94b9-66c8b00ff4ea"/>
+				<textElement>
+					<font fontName="Calisto MT" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número colegiado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="11" width="95" height="20" uuid="69fed013-e551-435e-94ba-4aba13945897"/>
+				<textElement>
+					<font fontName="Calisto MT" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="11" width="96" height="20" uuid="2602de96-37f6-4612-a677-3fe1f056bace"/>
+				<textElement>
+					<font fontName="Calisto MT" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="11" width="100" height="20" uuid="9e5a8374-c5dd-4887-a911-f68e15c160f9"/>
+				<textElement>
+					<font fontName="Calisto MT" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="11" width="100" height="20" uuid="c895aa4f-6dbf-4aa2-a2b4-c05a76e9882c"/>
+				<textElement>
+					<font fontName="Calisto MT" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="27" width="571" height="1" forecolor="#001824" uuid="e53ff1d6-7ee2-4670-9b11-36520585ee52"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="7" width="74" height="20" uuid="1ac82b96-6f52-4722-91ec-889be61493f1"/>
+				<textElement>
+					<font fontName="Calisto MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroColegiado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="7" width="95" height="20" uuid="9e334a42-1aa9-421a-a06e-f75346ef4528"/>
+				<textElement>
+					<font fontName="Calisto MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresDoctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="7" width="96" height="20" uuid="7a34719a-11d9-47ce-8013-d1588edbbd7f"/>
+				<textElement>
+					<font fontName="Calisto MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellidosDoctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="8" width="100" height="20" uuid="f2710563-2ac4-4daa-815c-40472707bab5"/>
+				<textElement>
+					<font fontName="Calisto MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonoContacto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="8" width="100" height="20" uuid="a651e4bd-0ff2-4ad9-9668-43d61f873518"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="61" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

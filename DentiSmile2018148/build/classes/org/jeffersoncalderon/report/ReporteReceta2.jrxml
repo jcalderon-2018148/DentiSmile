@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteReceta2" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="29b87167-771f-4c3c-a5e8-dc75cdef28d5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F8FCFF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="90272ed4-f6bf-451e-9c96-30295c85412a">
+		<parameter name="codPaciente" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select *, now(), fn_Edad(P.fechaNacimiento) from Pacientes P inner join Citas C on C.codigoPaciente = P.codigoPaciente inner join Doctores D on C.numeroColegiado = D.numeroColegiado inner join Especialidades E on E.codigoEspecialidad = D.codigoEspecialidad inner join Recetas R on D.numeroColegiado = R.numeroColegiado inner join DetalleReceta DR on R.codigoReceta = DR.codigoReceta inner join Medicamentos M on DR.codigoMedicamento = M.codigoMedicamento where P.codigoPaciente = $P{codPaciente};]]>
+		</queryString>
+		<field name="codigoPaciente" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nombresPaciente" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="apellidosPaciente" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="sexo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fechaNacimiento" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="direccionPaciente" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="telefonoPersonal" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fechaPrimeraVisita" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="codigoCita" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fechaCita" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="horaCita" class="java.sql.Time">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="tratamiento" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="descripCondActual" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="numeroColegiado" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nombresDoctor" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="apellidosDoctor" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="telefonoContacto" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="codigoEspecialidad" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="descripcion" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="codigoReceta" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fechaReceta" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="codigoDetalleReceta" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="dosis" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="codigoMedicamento" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nombreMedicamento" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="now()" class="java.sql.Timestamp"/>
+		<field name="fn_Edad(P.fechaNacimiento)" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="codReceta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="codPaciente" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Jilder Calderon M\\Documents\\NetBeansProjects\\DentiSmile2018148\\src\\org\\jeffersoncalderon\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagenNombre" class="java.lang.String"/>
+	<parameter name="imagenLogo" class="java.lang.String"/>
+	<parameter name="imagenFirma" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select *, fn_Edad(P.fechaNacimiento) from Pacientes P inner join Citas C on C.codigoPaciente = P.codigoPaciente inner join Doctores D on C.numeroColegiado = D.numeroColegiado inner join Especialidades E on E.codigoEspecialidad = D.codigoEspecialidad inner join Recetas R on R.numeroColegiado = D.numeroColegiado where R.codigoReceta = $P{codReceta}
+and P.codigoPaciente = $P{codPaciente};]]>
+	</queryString>
+	<field name="codigoPaciente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaNacimiento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoPersonal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaPrimeraVisita" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoCita" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaCita" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaCita" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tratamiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripCondActual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaReceta" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fn_Edad(P.fechaNacimiento)" class="java.lang.Integer"/>
+	<title>
+		<band height="107" splitType="Stretch">
+			<image>
+				<reportElement key="nombreClinica" mode="Transparent" x="101" y="23" width="174" height="58" uuid="1768c5d1-ed50-4068-a764-81f531d65d1f"/>
+				<imageExpression><![CDATA[$P{imagenNombre}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="-7" y="-17" width="156" height="123" uuid="26a7b19f-1afe-4650-85de-adf12a778b43"/>
+				<imageExpression><![CDATA[$P{imagenLogo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="501" y="21" width="242" height="20" uuid="94116140-3228-4649-8b00-191f7e9efeae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresDoctor}.concat(" " + $F{apellidosDoctor})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="461" y="21" width="40" height="20" uuid="b3a510b9-99a5-4f00-9a54-3bddfa669a5f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Dr(a).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="61" width="113" height="20" uuid="cfdd7a63-9314-45c0-8d2c-727389465a8a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Num. Colegiado:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="574" y="61" width="100" height="20" uuid="b4dadac7-a620-4251-986c-c9fa8ec78480"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroColegiado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="461" y="41" width="88" height="20" uuid="1ea6ca75-f695-4c51-8dd0-f1339e7f9018"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Especialidad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="549" y="41" width="194" height="20" uuid="14020523-c2a9-4c2a-8306-7fd3dc354cdf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="106" width="752" height="1" uuid="190a204e-449a-4d7f-8c41-d8dc6cde6112"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#212B54"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="439" y="10" width="1" height="81" uuid="5b20c4b4-6f00-4803-b487-3fc34aa24f4e"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#212B54"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="38" width="61" height="20" uuid="c7796e5b-5528-4765-90d7-fc76fb9d2e69"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="37" width="281" height="20" uuid="af06f2e9-060e-40f3-bf54-1823cc47bd59"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresPaciente}.concat(" " + $F{apellidosPaciente})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="574" y="8" width="45" height="20" uuid="38ff401b-060b-4500-8815-235b0c33c744"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="38" width="40" height="20" uuid="ed30f1d4-8e4a-4610-9404-ddab8e37b14f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="428" y="37" width="47" height="20" uuid="87b63d24-a5dd-4670-9246-68cc2c2400a8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fn_Edad(P.fechaNacimiento)}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="488" y="39" width="61" height="20" uuid="c79d28a7-11fc-4f5f-97e4-30b2017d0d9a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Género:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="559" y="38" width="28" height="20" uuid="0792917c-4dc0-4a97-862d-132ed37b5ce4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="61" y="58" width="292" height="1" uuid="d302c0c1-f3e6-4e31-89c3-c5ede7549c89"/>
+			</line>
+			<line>
+				<reportElement x="414" y="57" width="47" height="1" uuid="f5007872-01c9-47cc-869c-ddd57ca55715"/>
+			</line>
+			<line>
+				<reportElement x="549" y="58" width="28" height="1" uuid="e689cb45-d8cd-4b21-8f24-cceebf870304"/>
+			</line>
+			<line>
+				<reportElement x="619" y="28" width="100" height="1" uuid="6287746c-65c5-43c9-ad92-2822eec1aaac"/>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="628" y="9" width="100" height="20" uuid="64fbeafd-b223-45c5-a0c4-02848aed750d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="116" width="119" height="20" uuid="902ec04e-e96d-4d4f-8326-031b2013b4f8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="116" width="81" height="20" uuid="fc27cfea-95fe-4962-96a3-8c6f47c46bf9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receta No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="71" width="251" height="20" uuid="a7d8a2b2-79cf-4afe-8bcc-b6de9c795ff1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tratamiento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="71" width="91" height="20" uuid="ad59a182-50f4-447c-9675-ccf843349fd1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tratamiento:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="91" y="90" width="262" height="1" uuid="96d58271-e28f-40ae-8dc9-1f06dfe4734f"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="72" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="752" height="72" uuid="d4e729f4-9e58-40b2-bb19-ced2b95e3b46"/>
+				<subreportParameter name="codReceta">
+					<subreportParameterExpression><![CDATA[$P{codReceta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ReporteDetalleReceta2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="128" splitType="Stretch">
+			<line>
+				<reportElement x="501" y="53" width="218" height="1" uuid="0527f278-25b8-4553-9a8f-6ff3c99e96a0"/>
+			</line>
+			<staticText>
+				<reportElement x="560" y="51" width="100" height="20" uuid="b5012844-d779-443f-94e4-87dcc6ff8a13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<image>
+				<reportElement x="546" y="4" width="128" height="67" uuid="2f6ce4d2-a1db-4949-bb95-96987cf18f4c"/>
+				<imageExpression><![CDATA[$P{imagenFirma}]]></imageExpression>
+			</image>
+		</band>
+	</columnFooter>
+</jasperReport>

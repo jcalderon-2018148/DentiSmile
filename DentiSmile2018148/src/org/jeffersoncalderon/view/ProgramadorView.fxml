@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jeffersoncalderon.controller.ProgramadorController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Pane layoutX="29.0" layoutY="116.0" prefHeight="66.0" prefWidth="265.0" style="-fx-background-color: #2b4051; -fx-background-radius: 10 10 10;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0000004d" height="28.75" offsetX="2.0" offsetY="2.0" radius="14.1875" width="30.0" />
+               </effect>
+               <children>
+                  <Label layoutX="43.0" layoutY="33.0" text="Calderón Martínez" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="34.0" layoutY="8.0" text="Jefferson Alexander" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="29.0" layoutY="200.0" prefHeight="56.0" prefWidth="265.0" style="-fx-background-color: #2b4051; -fx-background-radius: 10 10 10;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0000004d" height="29.75" offsetX="2.0" offsetY="2.0" radius="14.4375" width="30.0" />
+               </effect>
+               <children>
+                  <Label layoutX="91.0" layoutY="17.0" text="2018148" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="29.0" layoutY="271.0" prefHeight="56.0" prefWidth="265.0" style="-fx-background-color: #2b4051; -fx-background-radius: 10 10 10;">
+               <effect>
+                  <DropShadow color="#0000004d" height="29.0" offsetX="2.0" offsetY="2.0" radius="14.25" width="30.0" />
+               </effect>
+               <children>
+                  <Label layoutX="102.0" layoutY="17.0" text="IN5AV" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Circle fill="#01d9b4" layoutX="515.0" layoutY="317.0" opacity="0.2" radius="128.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#015a6a" layoutX="541.0" layoutY="200.0" opacity="0.2" radius="33.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#2b4051" layoutX="574.0" layoutY="101.0" opacity="0.2" radius="46.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#a6bfc4" layoutX="480.0" layoutY="161.0" opacity="0.2" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#a6bfc4" layoutX="377.0" layoutY="255.0" opacity="0.2" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#a6bfc4" layoutX="324.0" layoutY="242.0" opacity="0.2" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#a6bfc4" layoutX="387.0" layoutY="347.0" opacity="0.2" radius="23.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#001b60" layoutX="454.0" layoutY="281.0" opacity="0.2" radius="39.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#001b60" layoutX="324.0" layoutY="363.0" opacity="0.2" radius="23.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#2b4051" layoutX="415.0" layoutY="189.0" opacity="0.2" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#2b4051" layoutX="324.0" layoutY="294.0" opacity="0.2" radius="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <QuadCurve controlX="155.0" controlY="94.0" endX="226.0" endY="-287.0" fill="#ffffff00" layoutX="387.0" layoutY="273.0" opacity="0.2" smooth="false" startX="9.0" startY="141.0" stroke="#2b4051" strokeType="INSIDE" strokeWidth="5.0" />
+      <QuadCurve controlX="155.0" controlY="94.0" endX="332.0" endY="-214.0" fill="#ffffff00" layoutX="397.0" layoutY="283.0" opacity="0.2" smooth="false" startX="9.0" startY="131.0" stroke="#2b4051" strokeType="INSIDE" strokeWidth="5.0" />
+      <QuadCurve controlX="155.0" controlY="94.0" endX="216.0" endY="-83.0" fill="#ffffff00" layoutX="397.0" layoutY="283.0" opacity="0.2" smooth="false" startX="55.0" startY="162.0" stroke="#2b4051" strokeType="INSIDE" strokeWidth="5.0" />
+      <QuadCurve controlX="155.0" controlY="94.0" endX="192.0" endY="18.0" fill="#ffffff00" layoutX="439.0" layoutY="308.0" opacity="0.2" smooth="false" startX="14.0" startY="137.0" stroke="#2b4051" strokeType="INSIDE" strokeWidth="5.0" />
+      <Pane layoutX="354.0" layoutY="101.0" prefHeight="256.0" prefWidth="200.0" style="-fx-background-color: #2b4051; -fx-background-radius: 10 10 10;">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#0000004d" height="29.0" offsetX="2.0" offsetY="2.0" radius="14.25" width="30.0" />
+         </effect>
+         <children>
+            <ImageView fitHeight="191.0" fitWidth="161.0" layoutX="20.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/ImagenProgramador.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="-15.0" layoutY="-10.0" prefHeight="78.0" prefWidth="618.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #A0A0A0;">
+         <children>
+            <Button fx:id="btnAtras" layoutX="31.0" layoutY="23.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="37.0" prefWidth="56.0" styleClass="button1" stylesheets="@../resource/DentiSmileCSS.css" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0000004e" height="29.75" offsetX="2.0" offsetY="2.0" radius="14.4375" width="30.0" />
+               </effect>
+            </Button>
+            <Pane layoutX="209.0" layoutY="24.0" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: #2b4051; -fx-background-radius: 30 30 30;">
+               <effect>
+                  <DropShadow color="#0000005a" height="29.85" offsetX="3.0" offsetY="3.0" radius="14.4625" width="30.0" />
+               </effect>
+               <children>
+                  <Label layoutX="15.0" layoutY="10.0" text="Datos del programador" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView disable="true" fitHeight="26.0" fitWidth="26.0" layoutX="46.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Equis.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
